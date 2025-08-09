@@ -1,0 +1,38 @@
+{
+    "apply_median": false,
+    "median_kernel_size": 5,
+    "apply_notch": false,
+    "notch_freqs": [],
+    "notch_q": [],
+    "notch_odd_sequence": false,
+    "detrend_signal": false,
+    "detrend_method": "highpass",
+    "detrend_cutoff": 0.1,
+    "apply_bandpass": false,
+    "bandpass_low": 1.0,
+    "bandpass_high": 200.0,
+    "bandpass_order": 4,
+    "apply_savgol": true,
+    "savgol_window": 11,
+    "savgol_poly": 3,
+    "savgol_mode": "interp",
+    "savgol_cut_signal_sequenz": true,
+    "apply_curvefit": false,
+    "curvefit_model": "relaxation_signal",
+    "curvefit_p0": [
+        60.0,
+        0.001
+    ],
+    "curvefit_bounds": [
+        [
+            0,
+            0
+        ],
+        [
+            "inf",
+            "inf"
+        ]
+    ],
+    "curvefit_method": "trf",
+    "curvefit_others": []
+}
