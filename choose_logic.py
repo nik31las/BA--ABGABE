@@ -174,7 +174,8 @@ def ask_filter_settings(find_opt=False):
         apply_curvefit= True
         if not find_opt:
             # Weitere Parameter – als String gespeichert
-            others_in = input("    Voreinstellungen (optional, z. B. useoff für Offset, guess_p0 für Startwerte Schätzen) durch Komma trennen [leer]: ").strip()
+            others_in = input("    Voreinstellungen (optional, z. B. useoff für Offset, guess_p0 für Startwerte Schätzen) durch Komma trennen [leer]: \n"
+            "Für das Verarbeiten von REALEN DATEN wird die Einstelung useoff stark empfohln").strip()
             if others_in:
                 curvefit_others = [s.strip() for s in others_in.split(",") if s.strip()]
                 for addon in curvefit_others:

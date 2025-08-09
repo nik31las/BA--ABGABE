@@ -62,10 +62,7 @@ def parse_input_range_list_mode(user_input, default_val):
     
 
 def input_range(prompt, default_start=None, default_end=None, default_step=None, default_val=None):
-    print("Eingabe Optionen: (start,end,step | =val für konstant | - zum Beibehalten | \nText/Tupel: z. B. Tupel:[([40,0],[80,1])] oder Bereich) | " \
-    "Liste: z.B. Liste: 1,10,1 ; =2 -> [[1,2][2,2],... [10,2]]\n" \
-    "Boolean z.B. b: True,False\n" \
-    "Für curvefit_others: String Liste 'Liste-s:-> trennen durch komma und wenn mehrere ptionen als Kombination mit + zusammen führen\n(Listes: guess_p0+useoff -> ['guess_p0,useoff'] (1 Option))\n")
+    
     user_input = input(
         f"{prompt}  [Default: {default_val}]: "
     ).strip()
@@ -166,6 +163,7 @@ def generate_filter_parameter_grid(filter_configs):
                         continue
 
                     
+
                     param_label = param.replace(f"{filter_name}_", "")
 
                     default_val = filter_config[param]
@@ -183,9 +181,23 @@ def generate_filter_parameter_grid(filter_configs):
                         default_start = default_end = default_step = None
 
 
+                    print("Eingabe Optionen: (start,end,step | =val für konstant | - zum Beibehalten | \nText/Tupel: z. B. Tupel:[([40,0],[80,1])] oder Bereich) | " \
+                        "Liste: z.B. Liste: 1,10,1 ; =2 -> [[1,2][2,2],... [10,2]]\n" \
+                        "Boolean z.B. b: True,False\n" \
+                        "Für curvefit_others: String Liste 'Liste-s:-> trennen durch komma und wenn mehrere ptionen als Kombination mit + zusammen führen\n(Listes: guess_p0+useoff -> ['guess_p0,useoff'] (1 Option))\n")
+                    
                     if param =='notch_odd_sequence':
-                        print("\n\nnotch_odd_sequence entspricht der Auswahl jeder Zweiten Sequenz\n." \
-                        "Muss nicht ungerade sein, kann auch gerade sein (je nach Einstellung).\n")
+                        print("notch_odd_sequence entspricht der Auswahl jeder Zweiten Sequenz" \
+                        "Muss nicht ungerade sein, kann auch gerade sein (je nach Einstellung)\n")
+
+
+                    if param == "curvefit_others":
+                        print("Bei REALEN DATEN wird das Verwenden von useoff STARK empfohlen\n" \
+                        "Auswählen durch - Eingabe - Liste-s: useoff")
+
+                    if param == "notch_odd_sequence":
+                        print("Für Eingabe b: True eingeben, um nur True auszuwählen \n")
+
 
                     values = input_range(
                         f"  Bereich für '{param}' (alias {param_label})",
@@ -302,7 +314,7 @@ def generate_edit_data_parameter_grid(T_total, filter_configs, real_data=False):
                 column_filtering_parameter_grid=generate_filter_parameter_grid(column_filter_configs)
             
             parameter_grid["cut_last_datapoint"] = get_bool_grid_input("Letzten Datenpunkt abschneiden? (j/n) [j]: ", default=True)
-            parameter_grid["invert"] = get_bool_grid_input("Gegebene Daten invertieren? (j/n) [n]: ", default=False)
+            parameter_grid["invert"] = get_bool_grid_input("Gegebene Daten invertieren? (j/n) [j]: ", default=True)
             parameter_grid["apply_remove_500Hz"] = get_bool_grid_input("500 Hz entfernen? (j/n) [j]: ", default=True)
             parameter_grid["remove_empty_measurement"] = get_bool_grid_input("Leermessung der MRX-Aparatur abziehen? (j/n) [n]: ", default=False)
         else:

@@ -18,7 +18,7 @@
       "name": "Debug Main",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/data_analysis2.py",//workscripts/load_and_plot_data.py", //.py",  //data_find_opt_konfig //",  //signals_v2  Passe das an deinen Startpunkt an
+      "program": "${workspaceFolder}/data_find_opt_konfig.py",//workscripts/load_and_plot_data.py", //.py",  //data_find_opt_konfig //",  //signals_v2  Passe das an deinen Startpunkt an
       "console": "integratedTerminal",
       "justMyCode": false  // optional: auch Library-Code debuggen
     }

@@ -43,6 +43,7 @@ def save_summary_as_json(summary_data, filename_base, output_dir="."):
     - filename_base: Dateiname ohne Endung (z. B. "sinus_test_q_variation")
     - output_dir: Pfad zum Speicherordner (Standard: aktuelles Verzeichnis)
     """
+    os.makedirs(output_dir, exist_ok=True)
     filename = f"{filename_base}.json"
     path = os.path.join(output_dir, filename)
 
@@ -132,22 +133,22 @@ def run_dynamic_filter_param_tests_with_evaluation(filter_configs, signal_params
         if analyse_params is not None:
             for cfg in best_tracker[key]:
                 for param in list(counter_map):  # aktuelle Schlüssel durchgehen
-                    if param =="curvefit_bounds":
-                        continue
-                    val = cfg.get(param)
+                    if param !="curvefit_bounds":
 
-                    # Fall: Liste von Listen → z. B. [[4.0, 10.0]]
-                    if isinstance(val, list) and len(val) == 1 and isinstance(val[0], list):
-                        val = val[0]  # auf [4.0, 10.0] reduzieren
+                        val = cfg.get(param)
 
-                    if isinstance(val, list):
-                        for i, v in enumerate(val):
-                            sub_key = f"{param}_{i+1}"
-                            if sub_key not in counter_map:
-                                counter_map[sub_key] = Counter()
-                            counter_map[sub_key][v] += 1
-                    else:
-                        counter_map[param][val] += 1
+                        # Fall: Liste von Listen → z. B. [[4.0, 10.0]]
+                        if isinstance(val, list) and len(val) == 1 and isinstance(val[0], list):
+                            val = val[0]  # auf [4.0, 10.0] reduzieren
+
+                        if isinstance(val, list):
+                            for i, v in enumerate(val):
+                                sub_key = f"{param}_{i+1}"
+                                if sub_key not in counter_map:
+                                    counter_map[sub_key] = Counter()
+                                counter_map[sub_key][v] += 1
+                        else:
+                            counter_map[param][val] += 1
 
             # Ausgabe und Speicherung
             merged_counters = {}

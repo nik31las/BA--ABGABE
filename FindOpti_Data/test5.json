@@ -1,0 +1,288 @@
+{
+    "best_rmse": {
+        "config": {
+            "apply_median": false,
+            "median_kernel_size": 5,
+            "apply_notch": true,
+            "notch_freqs": [
+                [
+                    50.0,
+                    100.0
+                ]
+            ],
+            "notch_q": [
+                [
+                    4.0,
+                    3.0
+                ]
+            ],
+            "notch_odd_sequence": false,
+            "detrend_signal": false,
+            "detrend_method": "highpass",
+            "detrend_cutoff": 0.1,
+            "apply_bandpass": false,
+            "bandpass_low": 1.0,
+            "bandpass_high": 200.0,
+            "bandpass_order": 4,
+            "apply_savgol": false,
+            "savgol_window": 11,
+            "savgol_poly": 3,
+            "savgol_mode": "interp",
+            "savgol_cut_signal_sequenz": true,
+            "apply_curvefit": false,
+            "curvefit_p0": [
+                60.0,
+                0.001
+            ],
+            "curvefit_bounds": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    Infinity,
+                    Infinity
+                ]
+            ],
+            "curvefit_method": "trf",
+            "curvefit_others": []
+        },
+        "data_config": {
+            "edit_Data": false,
+            "cut_Data": false,
+            "start_cut": null,
+            "end_cut": null,
+            "pre_avg_sequenzen": false,
+            "avg_sequenzen": false,
+            "colum_filtering": false,
+            "cut_last_datapoint": true,
+            "invert": false,
+            "apply_remove_500Hz": true,
+            "remove_empty_measurement": false
+        },
+        "rmse": 0.09731350694488375,
+        "mse": 0.009517434121859365,
+        "snr": 35.44472938064431,
+        "correlation": -0.48612195513084766
+    },
+    "best_mse": {
+        "config": {
+            "apply_median": false,
+            "median_kernel_size": 5,
+            "apply_notch": true,
+            "notch_freqs": [
+                [
+                    50.0,
+                    100.0
+                ]
+            ],
+            "notch_q": [
+                [
+                    4.0,
+                    3.0
+                ]
+            ],
+            "notch_odd_sequence": false,
+            "detrend_signal": false,
+            "detrend_method": "highpass",
+            "detrend_cutoff": 0.1,
+            "apply_bandpass": false,
+            "bandpass_low": 1.0,
+            "bandpass_high": 200.0,
+            "bandpass_order": 4,
+            "apply_savgol": false,
+            "savgol_window": 11,
+            "savgol_poly": 3,
+            "savgol_mode": "interp",
+            "savgol_cut_signal_sequenz": true,
+            "apply_curvefit": false,
+            "curvefit_p0": [
+                60.0,
+                0.001
+            ],
+            "curvefit_bounds": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    Infinity,
+                    Infinity
+                ]
+            ],
+            "curvefit_method": "trf",
+            "curvefit_others": []
+        },
+        "data_config": {
+            "edit_Data": false,
+            "cut_Data": false,
+            "start_cut": null,
+            "end_cut": null,
+            "pre_avg_sequenzen": false,
+            "avg_sequenzen": false,
+            "colum_filtering": false,
+            "cut_last_datapoint": true,
+            "invert": false,
+            "apply_remove_500Hz": true,
+            "remove_empty_measurement": false
+        },
+        "rmse": 0.09731350694488375,
+        "mse": 0.009517434121859365,
+        "snr": 35.44472938064431,
+        "correlation": -0.48612195513084766
+    },
+    "best_snr": {
+        "config": {
+            "apply_median": false,
+            "median_kernel_size": 5,
+            "apply_notch": true,
+            "notch_freqs": [
+                [
+                    50.0,
+                    100.0
+                ]
+            ],
+            "notch_q": [
+                [
+                    4.0,
+                    3.0
+                ]
+            ],
+            "notch_odd_sequence": false,
+            "detrend_signal": false,
+            "detrend_method": "highpass",
+            "detrend_cutoff": 0.1,
+            "apply_bandpass": false,
+            "bandpass_low": 1.0,
+            "bandpass_high": 200.0,
+            "bandpass_order": 4,
+            "apply_savgol": false,
+            "savgol_window": 11,
+            "savgol_poly": 3,
+            "savgol_mode": "interp",
+            "savgol_cut_signal_sequenz": true,
+            "apply_curvefit": false,
+            "curvefit_p0": [
+                60.0,
+                0.001
+            ],
+            "curvefit_bounds": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    Infinity,
+                    Infinity
+                ]
+            ],
+            "curvefit_method": "trf",
+            "curvefit_others": []
+        },
+        "data_config": {
+            "edit_Data": false,
+            "cut_Data": false,
+            "start_cut": null,
+            "end_cut": null,
+            "pre_avg_sequenzen": false,
+            "avg_sequenzen": false,
+            "colum_filtering": false,
+            "cut_last_datapoint": true,
+            "invert": false,
+            "apply_remove_500Hz": true,
+            "remove_empty_measurement": false
+        },
+        "rmse": 0.09731350694488375,
+        "mse": 0.009517434121859365,
+        "snr": 35.44472938064431,
+        "correlation": -0.48612195513084766
+    },
+    "best_correlation": {
+        "config": {
+            "apply_median": false,
+            "median_kernel_size": 5,
+            "apply_notch": true,
+            "notch_freqs": [
+                [
+                    50.0,
+                    100.0
+                ]
+            ],
+            "notch_q": [
+                [
+                    4.0,
+                    3.0
+                ]
+            ],
+            "notch_odd_sequence": false,
+            "detrend_signal": false,
+            "detrend_method": "highpass",
+            "detrend_cutoff": 0.1,
+            "apply_bandpass": false,
+            "bandpass_low": 1.0,
+            "bandpass_high": 200.0,
+            "bandpass_order": 4,
+            "apply_savgol": false,
+            "savgol_window": 11,
+            "savgol_poly": 3,
+            "savgol_mode": "interp",
+            "savgol_cut_signal_sequenz": true,
+            "apply_curvefit": false,
+            "curvefit_p0": [
+                60.0,
+                0.001
+            ],
+            "curvefit_bounds": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    Infinity,
+                    Infinity
+                ]
+            ],
+            "curvefit_method": "trf",
+            "curvefit_others": []
+        },
+        "data_config": {
+            "edit_Data": false,
+            "cut_Data": false,
+            "start_cut": null,
+            "end_cut": null,
+            "pre_avg_sequenzen": false,
+            "avg_sequenzen": false,
+            "colum_filtering": false,
+            "cut_last_datapoint": true,
+            "invert": false,
+            "apply_remove_500Hz": true,
+            "remove_empty_measurement": false
+        },
+        "rmse": 0.09731350694488375,
+        "mse": 0.009517434121859365,
+        "snr": 35.44472938064431,
+        "correlation": -0.48612195513084766
+    },
+    "results_analysed_params": {
+        "rmse": {
+            "nocht_q": {
+                "null": 1
+            }
+        },
+        "mse": {
+            "nocht_q": {
+                "null": 1
+            }
+        },
+        "snr": {
+            "nocht_q": {
+                "null": 1
+            }
+        },
+        "correlation": {
+            "nocht_q": {
+                "null": 1
+            }
+        }
+    }
+}

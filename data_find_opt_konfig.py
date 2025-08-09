@@ -226,29 +226,33 @@ def run_data_with_evaluation(filter_configs, signal_params, settings,repeat_calc
 
             for cfg in best_tracker[key]:
                 for param in list(counter_map):  # aktuelle Schlüssel durchgehen
-                    if param =="curvefit_bounds":
-                        print("hi")
-                    val = cfg.get(param)
+                    if param !="curvefit_bounds":
+                        val = cfg.get(param)
 
-                    # Fall: Liste von Listen → z. B. [[4.0, 10.0]]
-                    if isinstance(val, list) and len(val) == 1 and isinstance(val[0], list):
-                        val = val[0]  # auf [4.0, 10.0] reduzieren
+                        # Fall: Liste von Listen → z. B. [[4.0, 10.0]]
+                        if isinstance(val, list) and len(val) == 1 and isinstance(val[0], list):
+                            val = val[0]  # auf [4.0, 10.0] reduzieren
 
-                    if isinstance(val, list):
-                        for i, v in enumerate(val):
-                            sub_key = f"{param}_{i+1}"
-                            if sub_key not in counter_map:
-                                counter_map[sub_key] = Counter()
-                            counter_map[sub_key][v] += 1
-                    else:
-                        counter_map[param][val] += 1
+                        if param is {"notch_q", "notch_freqs"} and isinstance(val, list) and len(val) == 1:
+                            val = val[0]
+
+                        if isinstance(val, list):
+                            for i, v in enumerate(val):
+                                sub_key = f"{param}_{i+1}"
+                                if sub_key not in counter_map:
+                                    counter_map[sub_key] = Counter()
+                                counter_map[sub_key][v] += 1
+                        else:
+                            counter_map[param][val] += 1
 
             # Ausgabe und Speicherung
             merged_counters = {}
             for param, counter in counter_map.items():
                 print(f"  → {param}:")
-                for val, count in sorted(counter.items()):
-                    print(f"     {val}: {count}x")
+                sorted_items = sorted([item for item in counter.items() if item[0] is not None])
+                for val, count in sorted_items:
+                        if val is not None:
+                            print(f"     {val}: {count}x")
                 merged_counters[param] = dict(counter)
 
             results_analysed_params[key] = merged_counters
@@ -350,5 +354,5 @@ if __name__ == "__main__":
         ######
         #TODO#
         ######
-        save_folder=r"D:\MEchatronik\Bachlorarbeit\WORK\Testsignale\secondSignals\FindOpti_Data"
+        save_folder=r'D:\MEchatronik\Bachlorarbeit\WORK\Testsignale\secondSignals\FindOpti_Data'
         save_summary_as_json(summary, file_name,output_dir=save_folder)

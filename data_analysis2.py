@@ -96,7 +96,7 @@ def filter_given_data(
     #TODO#
     ######  
     # gestörter Datensatz, welche gefiltert werden soll
-    csv_dateipfad = r'"D:\MEchatronik\Bachlorarbeit\WORK\Testsignale\secondSignals\Daten\omg_log_20201208_202942.csv"'
+    csv_dateipfad = r'D:\MEchatronik\Bachlorarbeit\WORK\Testsignale\secondSignals\Daten\omg_log_20201208_202942.csv'
     spalten_index = 3         # 0-basiert, z. B. 3 = vierte Spalte (grad in nT)
 
     ######                                
